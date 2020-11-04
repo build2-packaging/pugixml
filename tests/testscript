@@ -7,6 +7,6 @@ end;
 mkdir $~/tests ;
 ln -s $src_base/data $~/tests/data ;
 ln -s $src_base/src $~/tests/src ;
-$test_target > "Success: 939 tests passed." == 0
-
-
+$test_target >>~/EOO/ == 0
+/Success: \d+ tests passed./
+EOO
