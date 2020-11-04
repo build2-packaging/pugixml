@@ -3,7 +3,6 @@ import libs = pugixml%lib{pugixml}
 
 ./ : exe{test} : upstream/{hxx ixx txx cxx}{** -fuzz_*} $libs
 
-info "cxx.target.cpu = $cxx.target.cpu"
 if($cxx.target.cpu == 'wasm32')
 {
     cc.poptions += -D_GLIBCXX_HAVE_UNISTD_H
