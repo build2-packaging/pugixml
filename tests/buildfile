@@ -2,14 +2,10 @@ import libs = pugixml%lib{pugixml}
 
 
 ./ : exe{test} : upstream/{hxx ixx txx cxx}{** -fuzz_*} $libs
-exe{test} : data/file{**} src/file{**}
+exe{test} : data/file{**} src/file{**} testscript
 
 if($cxx.target.class != "windows")
 {
     cc.poptions += -D_GLIBCXX_HAVE_UNISTD_H
 }
 
-if($cxx.target.cpu == 'wasm32')
-{
-    exe{test} : testscript{wasm}
-}

@@ -1,0 +1,12 @@
+
+if ($cxx.target.cpu == 'wasm32')
+    test_target = node $*
+else
+    test_target = $*
+end;
+mkdir $~/tests ;
+ln -s $src_base/data $~/tests/data ;
+ln -s $src_base/src $~/tests/src ;
+$test_target > "Success: 939 tests passed." == 0
+
+
