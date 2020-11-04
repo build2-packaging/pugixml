@@ -1,4 +1,10 @@
-./: {*/ -build/ -upstream/} doc{README.md} manifest
+./ : {*/ -build/ -upstream/} manifest
+
+./ : upstream/doc{README.md LICENSE.md} upstream/doc{docs/**}
+doc{*} :
+{
+	install.subdirs = true
+}
 
 # Don't install tests.
 #
