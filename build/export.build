@@ -1,0 +1,6 @@
+$out_root/
+{
+  include pugixml/
+}
+
+export $out_root/pugixml/$import.target
