@@ -1,1 +1,5 @@
-./: {*/ -build/}
+import libs = pugixml%lib{pugixml}
+
+
+./ : exe{test}: upstream/{hxx ixx txx cxx}{** -fuzz_*} $libs testscript{**}
+

@@ -21,6 +21,11 @@ cxx.poptions =+ "-I$out_root" "-I$src_root"
 obja{*}: cxx.poptions += -DPUGIXML_STATIC_BUILD
 objs{*}: cxx.poptions += -DPUGIXML_SHARED_BUILD
 
+if($cxx.class == "msvc" || ($cxx.class== "clang" && $cxx.target.class=="windows"))
+{
+  objs{*}: cxx.poptions += -DPUGIXML_API=__declspec(dllexport)
+}
+
 # Export options.
 #
 lib{pugixml}:
@@ -31,6 +36,11 @@ lib{pugixml}:
 
 liba{pugixml}: cxx.export.poptions += -DPUGIXML_STATIC
 libs{pugixml}: cxx.export.poptions += -DPUGIXML_SHARED
+
+if($cxx.class == "msvc" || ($cxx.class== "clang" && $cxx.target.class=="windows"))
+{
+  objs{*}: cxx.export.poptions += -DPUGIXML_API=__declspec(dllimport)
+}
 
 # For pre-releases use the complete version to make sure they cannot be used
 # in place of another pre-release or the final version. See the version module

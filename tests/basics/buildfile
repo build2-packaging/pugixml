@@ -1,3 +1,0 @@
-import libs = pugixml%lib{pugixml}
-
-exe{driver}: {hxx ixx txx cxx}{**} $libs testscript{**}
