@@ -1,11 +1,14 @@
 : 1
 name: pugixml
-version: 0.1.0-a.0.z
-summary: pugixml C++ library
-license: other: proprietary ; Not free/open source.
-description-file: README.md
-url: https://example.org/pugixml
-email: joel@jellynote.com
+version: 1.10.0
+summary: Light-weight, simple and fast XML parser for C++ with XPath support
+license: MIT
+description-file: upstream/README.md
+url: https://pugixml.org/
+src-url: https://github.com/zeux/pugixml
+package-url: https://github.com/build2-packaging/pugixml
+email: arseny.kapoulkine@gmail.com
+package-email: mjklaim@gmail.com
+
 depends: * build2 >= 0.13.0
 depends: * bpkg >= 0.13.0
-#depends: libhello ^1.0.0
