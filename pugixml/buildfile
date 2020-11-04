@@ -21,7 +21,7 @@ cxx.poptions =+ "-I$out_root" "-I$src_root"
 obja{*}: cxx.poptions += -DPUGIXML_STATIC_BUILD
 objs{*}: cxx.poptions += -DPUGIXML_SHARED_BUILD
 
-if($cxx.class == "msvc" || ($cxx.class== "clang" && $cxx.target.class=="windows"))
+if($cxx.class == "msvc" || ($cxx.id == "clang" && $cxx.target.class == "windows"))
 {
   objs{*}: cxx.poptions += '-DPUGIXML_API=__declspec(dllexport)'
 }
@@ -37,7 +37,7 @@ lib{pugixml}:
 liba{pugixml}: cxx.export.poptions += -DPUGIXML_STATIC
 libs{pugixml}: cxx.export.poptions += -DPUGIXML_SHARED
 
-if($cxx.class == "msvc" || ($cxx.class== "clang" && $cxx.target.class=="windows"))
+if($cxx.class == "msvc" || ($cxx.id == "clang" && $cxx.target.class == "windows"))
 {
   objs{*}: cxx.export.poptions += '-DPUGIXML_API=__declspec(dllimport)'
 }
