@@ -2,6 +2,7 @@ import libs = pugixml%lib{pugixml}
 
 
 ./ : exe{test} : upstream/{hxx ixx txx cxx}{** -fuzz_*} $libs
+exe{test} : data/file{**} src/hxx{**}
 
 if($cxx.target.cpu == 'wasm32')
 {
