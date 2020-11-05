@@ -1,6 +1,6 @@
 : 1
 name: pugixml
-version: 1.10.0
+version: 1.10.0+1
 summary: Light-weight, simple and fast XML parser for C++ with XPath support
 license: MIT
 description-file: upstream/README.md
