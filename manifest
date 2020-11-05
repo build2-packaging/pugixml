@@ -13,5 +13,5 @@ package-email: mjklaim@gmail.com
 depends: * build2 >= 0.13.0
 depends: * bpkg >= 0.13.0
 
-build-exclude: windows**   ; Windows is supported but tests fails on CI because of unicode file name.
+build-exclude: windows**   ; Windows is not officially supported, but might work if you don't use unicode file paths.
 
