@@ -15,7 +15,3 @@ exe{*}: test = true
 #
 test.target = $cxx.target
 
-if($cxx.target.cpu == 'wasm32')
-{
-    cxx.loptions += -s INVOKE_RUN=1 # Tests need to run main().
-}
