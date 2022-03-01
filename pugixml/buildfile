@@ -44,11 +44,6 @@ libs{pugixml}: cxx.export.poptions += -DPUGIXML_SHARED
 if($cxx.class == "msvc" || ($cxx.id == "clang" && $cxx.target.class == "windows"))
 {
   objs{*}: cxx.export.poptions += '-DPUGIXML_API=__declspec(dllimport)'
-  if($cxx.id == "msvc")
-  {
-    libs{pugixml}: cxx.export.poptions += '/Zc:__cplusplus'
-    liba{pugixml}: cxx.export.poptions += '/Zc:__cplusplus'
-  }
 }
 
 # For pre-releases use the complete version to make sure they cannot be used
