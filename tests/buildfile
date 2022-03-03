@@ -9,3 +9,7 @@ if($cxx.target.class != "windows")
     cc.poptions += -D_GLIBCXX_HAVE_UNISTD_H
 }
 
+if($cxx.target.class == "wasm32")
+{
+    cc.loptions += -s ALLOW_MEMORY_GROWTH --preload-file data/@tests/data
+}
