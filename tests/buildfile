@@ -9,7 +9,9 @@ if($cxx.target.class != "windows")
     cc.poptions += -D_GLIBCXX_HAVE_UNISTD_H
 }
 
-if($cxx.target.class == "wasm32")
+if($cxx.target.system == "emscripten")
 {
-    cc.loptions += -s ALLOW_MEMORY_GROWTH --preload-file data/@tests/data
+    cc.loptions += -s ALLOW_MEMORY_GROWTH -s STACK_SIZE=8MB \
+                   --preload-file $src_base/data/@tests/data \
+                   --preload-file $src_base/data/test.xml@tests/data/тест.xml
 }

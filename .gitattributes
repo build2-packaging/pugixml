@@ -17,3 +17,6 @@
 # Use `binary` to make sure certain files are never auto-detected as text.
 #
 #*.png binary
+
+tests/src symlink=dir
+tests/upstream symlink=dir

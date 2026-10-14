@@ -1,6 +1,11 @@
 
+# The upstream tests/data/тест.xml is symlinked as test.xml since bpkg can't
+# remove a file with this name on Windows (if not representable in the ANSI
+# code page), so create it under its upstream name here.
+#
 mkdir $~/tests ;
-ln -s $src_base/data $~/tests/data ;
+cp -r $src_base/data $~/tests/data ;
+cp $src_base/data/test.xml $~/tests/data/тест.xml ;
 ln -s $src_base/src $~/tests/src ;
 $* >>~/EOO/ == 0
 /Success: \d+ tests passed./
